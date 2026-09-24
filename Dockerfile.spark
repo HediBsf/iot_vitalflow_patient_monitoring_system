@@ -1,0 +1,23 @@
+FROM bitnamilegacy/spark:3.5.1
+
+USER root
+
+# Create a dummy script to trigger dependency download
+RUN echo "print('Pre-downloading Spark dependencies...')" > /tmp/install_deps.py
+
+# Run spark-submit in local mode to download the Kafka dependencies into the Ivy cache
+# We use the same package coordinates as in the launch script
+RUN /opt/bitnami/spark/bin/spark-submit \
+    --master local[*] \
+    --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.1 \
+    /tmp/install_deps.py
+
+# Copy the downloaded JARs from the Ivy cache to the main Spark JARs directory
+# This makes them available globally without needing --packages at runtime
+# When running as root, the Ivy cache is located in /root/.ivy2
+RUN cp -r /root/.ivy2/jars/* /opt/bitnami/spark/jars/ && \
+    rm -rf /root/.ivy2 && \
+    rm /tmp/install_deps.py
+
+# Switch back to the default non-root user
+USER 1001

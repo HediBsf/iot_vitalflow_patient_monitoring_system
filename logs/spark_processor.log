@@ -1,0 +1,562 @@
+:: loading settings :: url = jar:file:/opt/bitnami/spark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /opt/bitnami/spark/.ivy2/cache
+The jars for the packages stored in: /opt/bitnami/spark/.ivy2/jars
+org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-5a6c8d09-d177-421a-858f-9fb8e931750d;1.0
+	confs: [default]
+	found org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.1 in central
+	found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.1 in central
+	found org.apache.kafka#kafka-clients;3.4.1 in central
+	found org.lz4#lz4-java;1.8.0 in central
+	found org.xerial.snappy#snappy-java;1.1.10.3 in central
+	found org.slf4j#slf4j-api;2.0.7 in central
+	found org.apache.hadoop#hadoop-client-runtime;3.3.4 in central
+	found org.apache.hadoop#hadoop-client-api;3.3.4 in central
+	found commons-logging#commons-logging;1.1.3 in central
+	found com.google.code.findbugs#jsr305;3.0.0 in central
+	found org.apache.commons#commons-pool2;2.11.1 in central
+:: resolution report :: resolve 276ms :: artifacts dl 16ms
+	:: modules in use:
+	com.google.code.findbugs#jsr305;3.0.0 from central in [default]
+	commons-logging#commons-logging;1.1.3 from central in [default]
+	org.apache.commons#commons-pool2;2.11.1 from central in [default]
+	org.apache.hadoop#hadoop-client-api;3.3.4 from central in [default]
+	org.apache.hadoop#hadoop-client-runtime;3.3.4 from central in [default]
+	org.apache.kafka#kafka-clients;3.4.1 from central in [default]
+	org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.1 from central in [default]
+	org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.1 from central in [default]
+	org.lz4#lz4-java;1.8.0 from central in [default]
+	org.slf4j#slf4j-api;2.0.7 from central in [default]
+	org.xerial.snappy#snappy-java;1.1.10.3 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   11  |   0   |   0   |   0   ||   11  |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-5a6c8d09-d177-421a-858f-9fb8e931750d
+	confs: [default]
+	0 artifacts copied, 11 already retrieved (0kB/4ms)
+25/12/15 07:15:13 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/15 07:15:13 INFO SparkContext: Running Spark version 3.5.1
+25/12/15 07:15:13 INFO SparkContext: OS info Linux, 6.12.54-linuxkit, aarch64
+25/12/15 07:15:13 INFO SparkContext: Java version 17.0.12
+25/12/15 07:15:13 INFO ResourceUtils: ==============================================================
+25/12/15 07:15:13 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/12/15 07:15:13 INFO ResourceUtils: ==============================================================
+25/12/15 07:15:13 INFO SparkContext: Submitted application: ICU_Monitor
+25/12/15 07:15:13 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/12/15 07:15:13 INFO ResourceProfile: Limiting resource is cpu
+25/12/15 07:15:13 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/12/15 07:15:13 INFO SecurityManager: Changing view acls to: spark
+25/12/15 07:15:13 INFO SecurityManager: Changing modify acls to: spark
+25/12/15 07:15:13 INFO SecurityManager: Changing view acls groups to: 
+25/12/15 07:15:13 INFO SecurityManager: Changing modify acls groups to: 
+25/12/15 07:15:13 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: spark; groups with view permissions: EMPTY; users with modify permissions: spark; groups with modify permissions: EMPTY
+25/12/15 07:15:14 INFO Utils: Successfully started service 'sparkDriver' on port 43127.
+25/12/15 07:15:14 INFO SparkEnv: Registering MapOutputTracker
+25/12/15 07:15:14 INFO SparkEnv: Registering BlockManagerMaster
+25/12/15 07:15:14 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/12/15 07:15:14 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/12/15 07:15:14 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/12/15 07:15:14 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-3e0b1874-deeb-4488-9f22-dbe5797fd2a8
+25/12/15 07:15:14 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+25/12/15 07:15:14 INFO SparkEnv: Registering OutputCommitCoordinator
+25/12/15 07:15:14 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/12/15 07:15:14 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+25/12/15 07:15:14 INFO Utils: Successfully started service 'SparkUI' on port 4041.
+25/12/15 07:15:14 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.1.jar at spark://ee1e3dc8495e:43127/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.1.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.1.jar at spark://ee1e3dc8495e:43127/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.1.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-3.4.1.jar at spark://ee1e3dc8495e:43127/jars/org.apache.kafka_kafka-clients-3.4.1.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar at spark://ee1e3dc8495e:43127/jars/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar at spark://ee1e3dc8495e:43127/jars/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar at spark://ee1e3dc8495e:43127/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar at spark://ee1e3dc8495e:43127/jars/org.lz4_lz4-java-1.8.0.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar at spark://ee1e3dc8495e:43127/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-2.0.7.jar at spark://ee1e3dc8495e:43127/jars/org.slf4j_slf4j-api-2.0.7.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar at spark://ee1e3dc8495e:43127/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar at spark://ee1e3dc8495e:43127/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.1.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.1.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.1.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.1.jar
+25/12/15 07:15:14 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.1.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.1.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.1.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.1.jar
+25/12/15 07:15:14 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-3.4.1.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-3.4.1.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-3.4.1.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.kafka_kafka-clients-3.4.1.jar
+25/12/15 07:15:14 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar at file:///opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/com.google.code.findbugs_jsr305-3.0.0.jar
+25/12/15 07:15:14 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.commons_commons-pool2-2.11.1.jar
+25/12/15 07:15:14 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar
+25/12/15 07:15:14 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.lz4_lz4-java-1.8.0.jar
+25/12/15 07:15:14 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar at file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.xerial.snappy_snappy-java-1.1.10.3.jar
+25/12/15 07:15:14 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-2.0.7.jar at file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-2.0.7.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-2.0.7.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.slf4j_slf4j-api-2.0.7.jar
+25/12/15 07:15:14 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.hadoop_hadoop-client-api-3.3.4.jar
+25/12/15 07:15:14 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar at file:///opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/commons-logging_commons-logging-1.1.3.jar
+25/12/15 07:15:14 INFO Executor: Starting executor ID driver on host ee1e3dc8495e
+25/12/15 07:15:14 INFO Executor: OS info Linux, 6.12.54-linuxkit, aarch64
+25/12/15 07:15:14 INFO Executor: Java version 17.0.12
+25/12/15 07:15:14 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/12/15 07:15:14 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@410a0697 for default.
+25/12/15 07:15:14 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar
+25/12/15 07:15:14 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.1.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.1.jar has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.1.jar
+25/12/15 07:15:14 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.commons_commons-pool2-2.11.1.jar
+25/12/15 07:15:14 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-2.0.7.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-2.0.7.jar has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.slf4j_slf4j-api-2.0.7.jar
+25/12/15 07:15:14 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.1.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.1.jar has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.1.jar
+25/12/15 07:15:14 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-3.4.1.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-3.4.1.jar has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.kafka_kafka-clients-3.4.1.jar
+25/12/15 07:15:14 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: /opt/bitnami/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/com.google.code.findbugs_jsr305-3.0.0.jar
+25/12/15 07:15:14 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.lz4_lz4-java-1.8.0.jar
+25/12/15 07:15:14 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.hadoop_hadoop-client-api-3.3.4.jar
+25/12/15 07:15:14 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: /opt/bitnami/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/commons-logging_commons-logging-1.1.3.jar
+25/12/15 07:15:14 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.xerial.snappy_snappy-java-1.1.10.3.jar
+25/12/15 07:15:14 INFO Executor: Fetching spark://ee1e3dc8495e:43127/jars/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO TransportClientFactory: Successfully created connection to ee1e3dc8495e/172.18.0.4:43127 after 13 ms (0 ms spent in bootstraps)
+25/12/15 07:15:14 INFO Utils: Fetching spark://ee1e3dc8495e:43127/jars/com.google.code.findbugs_jsr305-3.0.0.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp6893490792591307779.tmp
+25/12/15 07:15:14 INFO Utils: /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp6893490792591307779.tmp has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/com.google.code.findbugs_jsr305-3.0.0.jar
+25/12/15 07:15:14 INFO Executor: Adding file:/tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/com.google.code.findbugs_jsr305-3.0.0.jar to class loader default
+25/12/15 07:15:14 INFO Executor: Fetching spark://ee1e3dc8495e:43127/jars/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Fetching spark://ee1e3dc8495e:43127/jars/org.apache.commons_commons-pool2-2.11.1.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp12796664088498865865.tmp
+25/12/15 07:15:14 INFO Utils: /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp12796664088498865865.tmp has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.commons_commons-pool2-2.11.1.jar
+25/12/15 07:15:14 INFO Executor: Adding file:/tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.commons_commons-pool2-2.11.1.jar to class loader default
+25/12/15 07:15:14 INFO Executor: Fetching spark://ee1e3dc8495e:43127/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Fetching spark://ee1e3dc8495e:43127/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp12430435960729005721.tmp
+25/12/15 07:15:14 INFO Utils: /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp12430435960729005721.tmp has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.hadoop_hadoop-client-api-3.3.4.jar
+25/12/15 07:15:14 INFO Executor: Adding file:/tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.hadoop_hadoop-client-api-3.3.4.jar to class loader default
+25/12/15 07:15:14 INFO Executor: Fetching spark://ee1e3dc8495e:43127/jars/org.apache.kafka_kafka-clients-3.4.1.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Fetching spark://ee1e3dc8495e:43127/jars/org.apache.kafka_kafka-clients-3.4.1.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp15439426594899510461.tmp
+25/12/15 07:15:14 INFO Utils: /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp15439426594899510461.tmp has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.kafka_kafka-clients-3.4.1.jar
+25/12/15 07:15:14 INFO Executor: Adding file:/tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.kafka_kafka-clients-3.4.1.jar to class loader default
+25/12/15 07:15:14 INFO Executor: Fetching spark://ee1e3dc8495e:43127/jars/org.slf4j_slf4j-api-2.0.7.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Fetching spark://ee1e3dc8495e:43127/jars/org.slf4j_slf4j-api-2.0.7.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp4654622397839773623.tmp
+25/12/15 07:15:14 INFO Utils: /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp4654622397839773623.tmp has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.slf4j_slf4j-api-2.0.7.jar
+25/12/15 07:15:14 INFO Executor: Adding file:/tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.slf4j_slf4j-api-2.0.7.jar to class loader default
+25/12/15 07:15:14 INFO Executor: Fetching spark://ee1e3dc8495e:43127/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.1.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Fetching spark://ee1e3dc8495e:43127/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.1.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp9530976744700772403.tmp
+25/12/15 07:15:14 INFO Utils: /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp9530976744700772403.tmp has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.1.jar
+25/12/15 07:15:14 INFO Executor: Adding file:/tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.1.jar to class loader default
+25/12/15 07:15:14 INFO Executor: Fetching spark://ee1e3dc8495e:43127/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Fetching spark://ee1e3dc8495e:43127/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp13344171614312627610.tmp
+25/12/15 07:15:14 INFO Utils: /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp13344171614312627610.tmp has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar
+25/12/15 07:15:14 INFO Executor: Adding file:/tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar to class loader default
+25/12/15 07:15:14 INFO Executor: Fetching spark://ee1e3dc8495e:43127/jars/org.lz4_lz4-java-1.8.0.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Fetching spark://ee1e3dc8495e:43127/jars/org.lz4_lz4-java-1.8.0.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp5662876607192003342.tmp
+25/12/15 07:15:14 INFO Utils: /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp5662876607192003342.tmp has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.lz4_lz4-java-1.8.0.jar
+25/12/15 07:15:14 INFO Executor: Adding file:/tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.lz4_lz4-java-1.8.0.jar to class loader default
+25/12/15 07:15:14 INFO Executor: Fetching spark://ee1e3dc8495e:43127/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Fetching spark://ee1e3dc8495e:43127/jars/commons-logging_commons-logging-1.1.3.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp3751023887057546574.tmp
+25/12/15 07:15:14 INFO Utils: /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp3751023887057546574.tmp has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/commons-logging_commons-logging-1.1.3.jar
+25/12/15 07:15:14 INFO Executor: Adding file:/tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/commons-logging_commons-logging-1.1.3.jar to class loader default
+25/12/15 07:15:14 INFO Executor: Fetching spark://ee1e3dc8495e:43127/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.1.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Fetching spark://ee1e3dc8495e:43127/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.1.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp11434184000919001606.tmp
+25/12/15 07:15:14 INFO Utils: /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp11434184000919001606.tmp has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.1.jar
+25/12/15 07:15:14 INFO Executor: Adding file:/tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.1.jar to class loader default
+25/12/15 07:15:14 INFO Executor: Fetching spark://ee1e3dc8495e:43127/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar with timestamp 1765782913900
+25/12/15 07:15:14 INFO Utils: Fetching spark://ee1e3dc8495e:43127/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp7402345700859276051.tmp
+25/12/15 07:15:14 INFO Utils: /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/fetchFileTemp7402345700859276051.tmp has been previously copied to /tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.xerial.snappy_snappy-java-1.1.10.3.jar
+25/12/15 07:15:14 INFO Executor: Adding file:/tmp/spark-d799bae6-93f5-4a3b-affa-d422d5e731f5/userFiles-6bc81f9c-8c82-470d-8079-3c2f4b39b173/org.xerial.snappy_snappy-java-1.1.10.3.jar to class loader default
+25/12/15 07:15:14 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37487.
+25/12/15 07:15:14 INFO NettyBlockTransferService: Server created on ee1e3dc8495e:37487
+25/12/15 07:15:14 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/12/15 07:15:14 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, ee1e3dc8495e, 37487, None)
+25/12/15 07:15:14 INFO BlockManagerMasterEndpoint: Registering block manager ee1e3dc8495e:37487 with 434.4 MiB RAM, BlockManagerId(driver, ee1e3dc8495e, 37487, None)
+25/12/15 07:15:14 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, ee1e3dc8495e, 37487, None)
+25/12/15 07:15:14 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, ee1e3dc8495e, 37487, None)
+25/12/15 07:15:15 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+25/12/15 07:15:16 WARN ResolveWriteToStream: Temporary checkpoint location created which is deleted normally when the query didn't fail: /tmp/temporary-8804c03a-c1a9-4b7f-9c57-f199f036b3f2. If it's required to delete it under any circumstances, please set spark.sql.streaming.forceDeleteTempCheckpointLocation to true. Important to know deleting temp checkpoint folder is best effort.
+25/12/15 07:15:16 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+25/12/15 07:15:16 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+25/12/15 07:15:18 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:18 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:18 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:18 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:18 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:18 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:18 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:18 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:18 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:18 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:18 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:18 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:18 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:18 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+-------------------------------------------
+Batch: 0
+-------------------------------------------
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:20 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
++------------------------------------------+----------+---------+---------+
+|window                                    |subject_id|metric   |avg_value|
++------------------------------------------+----------+---------+---------+
+|{2025-12-15 07:15:00, 2025-12-15 07:15:30}|10005817  |RespRate |14.0     |
+|{2025-12-15 07:15:00, 2025-12-15 07:15:30}|10005817  |O2Sat    |86.0     |
+|{2025-12-15 07:15:00, 2025-12-15 07:15:30}|10005817  |HeartRate|130.0    |
+|{2025-12-15 07:15:00, 2025-12-15 07:15:30}|10005817  |SysBP    |123.0    |
+|{2025-12-15 07:15:00, 2025-12-15 07:15:30}|10005817  |DiasBP   |83.0     |
++------------------------------------------+----------+---------+---------+
+
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:21 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:22 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:22 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:22 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:22 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:22 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:22 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:22 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:22 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:22 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:22 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:22 WARN HDFSBackedStateStoreProvider: The state for version 77 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+25/12/15 07:15:22 ERROR MicroBatchExecution: Query [id = 850e5a46-2bd2-4db5-86ce-3402f07e6a23, runId = 38c55342-7fd2-445a-b5f0-b82830167391] terminated with error
+org.apache.spark.SparkException: [CONCURRENT_STREAM_LOG_UPDATE] Concurrent update to the log. Multiple streaming jobs detected for 77.
+Please make sure only one streaming job runs on a specific checkpoint location at a time.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.concurrentStreamLogUpdate(QueryExecutionErrors.scala:1302)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$markMicroBatchEnd$1(MicroBatchExecution.scala:786)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.markMicroBatchEnd(MicroBatchExecution.scala:785)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$19(MicroBatchExecution.scala:752)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.withProgressLocked(MicroBatchExecution.scala:810)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runBatch(MicroBatchExecution.scala:750)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$2(MicroBatchExecution.scala:286)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$1(MicroBatchExecution.scala:249)
+	at org.apache.spark.sql.execution.streaming.ProcessingTimeExecutor.execute(TriggerExecutor.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runActivatedStream(MicroBatchExecution.scala:239)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:311)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:289)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.$anonfun$run$1(StreamExecution.scala:211)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:94)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:211)
+Traceback (most recent call last):
+  File "/app/src/spark/processor.py", line 67, in <module>
+    run()
+  File "/app/src/spark/processor.py", line 64, in run
+    spark.streams.awaitAnyTermination()
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/streaming/query.py", line 596, in awaitAnyTermination
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+pyspark.errors.exceptions.captured.StreamingQueryException: [STREAM_FAILED] Query [id = 850e5a46-2bd2-4db5-86ce-3402f07e6a23, runId = 38c55342-7fd2-445a-b5f0-b82830167391] terminated with exception: [CONCURRENT_STREAM_LOG_UPDATE] Concurrent update to the log. Multiple streaming jobs detected for 77.
+Please make sure only one streaming job runs on a specific checkpoint location at a time.
+25/12/15 07:15:22 ERROR WriteToDataSourceV2Exec: Data source write support MicroBatchWrite[epoch: 1, writer: ConsoleWriter[numRows=20, truncate=false]] is aborting.
+25/12/15 07:15:22 ERROR WriteToDataSourceV2Exec: Data source write support MicroBatchWrite[epoch: 1, writer: ConsoleWriter[numRows=20, truncate=false]] aborted.
+25/12/15 07:15:22 ERROR MicroBatchExecution: Query [id = 8562909a-79ef-46b8-a57e-08530e224460, runId = 20a92b3e-0175-49ec-8924-bf8ec44e34ee] terminated with error
+org.apache.spark.SparkException: Job 2 cancelled because SparkContext was shut down
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$cleanUpAfterSchedulerStop$1(DAGScheduler.scala:1253)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$cleanUpAfterSchedulerStop$1$adapted(DAGScheduler.scala:1251)
+	at scala.collection.mutable.HashSet.foreach(HashSet.scala:79)
+	at org.apache.spark.scheduler.DAGScheduler.cleanUpAfterSchedulerStop(DAGScheduler.scala:1251)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onStop(DAGScheduler.scala:3087)
+	at org.apache.spark.util.EventLoop.stop(EventLoop.scala:84)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$stop$3(DAGScheduler.scala:2973)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1375)
+	at org.apache.spark.scheduler.DAGScheduler.stop(DAGScheduler.scala:2973)
+	at org.apache.spark.SparkContext.$anonfun$stop$12(SparkContext.scala:2263)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1375)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2263)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2216)
+	at org.apache.spark.SparkContext.$anonfun$new$34(SparkContext.scala:686)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:989)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2398)
+	at org.apache.spark.sql.execution.datasources.v2.V2TableWriteExec.writeWithV2(WriteToDataSourceV2Exec.scala:385)
+	at org.apache.spark.sql.execution.datasources.v2.V2TableWriteExec.writeWithV2$(WriteToDataSourceV2Exec.scala:359)
+	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec.writeWithV2(WriteToDataSourceV2Exec.scala:307)
+	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec.run(WriteToDataSourceV2Exec.scala:318)
+	at org.apache.spark.sql.execution.datasources.v2.V2CommandExec.result$lzycompute(V2CommandExec.scala:43)
+	at org.apache.spark.sql.execution.datasources.v2.V2CommandExec.result(V2CommandExec.scala:43)
+	at org.apache.spark.sql.execution.datasources.v2.V2CommandExec.executeCollect(V2CommandExec.scala:49)
+	at org.apache.spark.sql.Dataset.collectFromPlan(Dataset.scala:4332)
+	at org.apache.spark.sql.Dataset.$anonfun$collect$1(Dataset.scala:3573)
+	at org.apache.spark.sql.Dataset.$anonfun$withAction$2(Dataset.scala:4322)
+	at org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:546)
+	at org.apache.spark.sql.Dataset.$anonfun$withAction$1(Dataset.scala:4320)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.Dataset.withAction(Dataset.scala:4320)
+	at org.apache.spark.sql.Dataset.collect(Dataset.scala:3573)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$17(MicroBatchExecution.scala:741)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$16(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runBatch(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$2(MicroBatchExecution.scala:286)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$1(MicroBatchExecution.scala:249)
+	at org.apache.spark.sql.execution.streaming.ProcessingTimeExecutor.execute(TriggerExecutor.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runActivatedStream(MicroBatchExecution.scala:239)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:311)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:289)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.$anonfun$run$1(StreamExecution.scala:211)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:94)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:211)
+25/12/15 07:15:22 WARN DiskBlockObjectWriter: Error deleting /tmp/blockmgr-3e0b1874-deeb-4488-9f22-dbe5797fd2a8/12/temp_shuffle_a9b2cd6a-a312-438a-9af5-5d19f1598b98
+25/12/15 07:15:22 WARN DiskBlockObjectWriter: Error deleting /tmp/blockmgr-3e0b1874-deeb-4488-9f22-dbe5797fd2a8/23/temp_shuffle_d6e762bb-b353-465a-a697-a8817f3f5c55
+25/12/15 07:15:22 WARN DiskBlockObjectWriter: Error deleting /tmp/blockmgr-3e0b1874-deeb-4488-9f22-dbe5797fd2a8/16/temp_shuffle_9dd01df0-ca54-4207-b726-9fbd7bc9ce4d
+25/12/15 07:15:22 WARN DiskBlockObjectWriter: Error deleting /tmp/blockmgr-3e0b1874-deeb-4488-9f22-dbe5797fd2a8/19/temp_shuffle_1103ccd2-7819-44a1-95af-a536ce0c67a3
+25/12/15 07:15:22 WARN DiskBlockObjectWriter: Error deleting /tmp/blockmgr-3e0b1874-deeb-4488-9f22-dbe5797fd2a8/3c/temp_shuffle_3ad03d27-eace-4763-b533-800d64fc6319
+25/12/15 07:15:22 WARN DiskBlockObjectWriter: Error deleting /tmp/blockmgr-3e0b1874-deeb-4488-9f22-dbe5797fd2a8/18/temp_shuffle_a869d43c-d66a-4c5e-9a6f-759520324bdb
+25/12/15 07:15:22 WARN DiskBlockObjectWriter: Error deleting /tmp/blockmgr-3e0b1874-deeb-4488-9f22-dbe5797fd2a8/0a/temp_shuffle_d526ebdc-df94-4b20-b3ad-e92fbba83c7a
+25/12/15 07:15:22 WARN DiskBlockObjectWriter: Error deleting /tmp/blockmgr-3e0b1874-deeb-4488-9f22-dbe5797fd2a8/2e/temp_shuffle_34338017-0499-45e4-ae40-8ae473c78b22
+25/12/15 07:15:22 ERROR TaskContextImpl: Error in TaskCompletionListener
+org.apache.spark.SparkException: Block broadcast_10 does not exist
+	at org.apache.spark.errors.SparkCoreErrors$.blockDoesNotExistError(SparkCoreErrors.scala:318)
+	at org.apache.spark.storage.BlockInfoManager.blockInfo(BlockInfoManager.scala:269)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:390)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:1309)
+	at org.apache.spark.broadcast.TorrentBroadcast.$anonfun$releaseBlockManagerLock$1(TorrentBroadcast.scala:319)
+	at org.apache.spark.broadcast.TorrentBroadcast.$anonfun$releaseBlockManagerLock$1$adapted(TorrentBroadcast.scala:319)
+	at org.apache.spark.TaskContext$$anon$1.onTaskCompletion(TaskContext.scala:137)
+	at org.apache.spark.TaskContextImpl.$anonfun$invokeTaskCompletionListeners$1(TaskContextImpl.scala:144)
+	at org.apache.spark.TaskContextImpl.$anonfun$invokeTaskCompletionListeners$1$adapted(TaskContextImpl.scala:144)
+	at org.apache.spark.TaskContextImpl.invokeListeners(TaskContextImpl.scala:199)
+	at org.apache.spark.TaskContextImpl.invokeTaskCompletionListeners(TaskContextImpl.scala:144)
+	at org.apache.spark.TaskContextImpl.markTaskCompleted(TaskContextImpl.scala:137)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:177)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/12/15 07:15:22 ERROR Utils: Uncaught exception in thread Executor task launch worker for task 0.0 in stage 4.0 (TID 402)
+java.lang.NullPointerException: Cannot invoke "org.apache.spark.SparkEnv.blockManager()" because the return value of "org.apache.spark.SparkEnv$.get()" is null
+	at org.apache.spark.scheduler.Task.$anonfun$run$3(Task.scala:146)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1375)
+	at org.apache.spark.scheduler.Task.run(Task.scala:144)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/12/15 07:15:22 ERROR Executor: Exception in task 0.0 in stage 4.0 (TID 402): /tmp/blockmgr-3e0b1874-deeb-4488-9f22-dbe5797fd2a8/17

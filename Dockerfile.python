@@ -1,0 +1,17 @@
+# Dockerfile.python
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Install Utilities
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python Deps
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Keep container alive so we can exec into it
+CMD ["tail", "-f", "/dev/null"]

@@ -1,0 +1,137 @@
+version: '3.8'
+
+services:
+  # ----------------------------
+  # KAFKA (Your Working Config)
+  # ----------------------------
+  kafka:
+    image: bitnamilegacy/kafka:3.7.0
+    container_name: kafka
+    hostname: kafka
+    ports:
+      - "9092:9092"
+    environment:
+      - KAFKA_CFG_NODE_ID=1
+      - KAFKA_CFG_PROCESS_ROLES=controller,broker
+      - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
+      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@kafka:9093
+      - ALLOW_PLAINTEXT_LISTENER=yes
+    volumes:
+      - kafka_data:/bitnami/kafka
+    networks:
+      - vitalflow-net
+
+  # ----------------------------
+  # SPARK (With Data Volumes)
+  # ----------------------------
+  spark-master:
+    build:
+      context: .
+      dockerfile: Dockerfile.spark
+    container_name: spark-master
+    environment:
+      - SPARK_MODE=master
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+    networks:
+      - vitalflow-net
+
+  spark-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.spark
+    container_name: spark-worker
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+      - SPARK_WORKER_MEMORY=1G
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+    depends_on:
+      - spark-master
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+    networks:
+      - vitalflow-net
+
+  # ----------------------------
+  # DATABASE
+  # ----------------------------
+  mongo:
+    image: mongo:6.0
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - vitalflow-net
+
+  # ----------------------------
+  # APP CONTAINER (Gateway/Persister)
+  # ----------------------------
+  python-apps:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    container_name: python-apps
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+    environment:
+      - KAFKA_BROKER=kafka:9092
+      - MONGO_URI=mongodb://root:root@mongo:27017/
+    command: tail -f /dev/null
+    networks:
+      - vitalflow-net
+
+  # ----------------------------
+  # NEW DASHBOARD API (FastAPI)
+  # ----------------------------
+  dashboard-api:
+    build:
+      context: ./src/dashboard_api
+    container_name: dashboard-api
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGO_URI=mongodb://root:root@mongo:27017/
+    depends_on:
+      - mongo
+    networks:
+      - vitalflow-net
+
+  # ----------------------------
+  # NEW DASHBOARD UI (Next.js)
+  # ----------------------------
+  dashboard-ui:
+    build:
+      context: ./src/dashboard_ui
+    container_name: dashboard-ui
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - dashboard-api
+    networks:
+      - vitalflow-net
+
+networks:
+  vitalflow-net:
+    driver: bridge
+
+volumes:
+  kafka_data:
+  mongo_data:
